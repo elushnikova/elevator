@@ -5,14 +5,15 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .building {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(var(--floor-height), 3);
+  display: flex;
+  flex-direction: column-reverse;
   width: 600px;
   border: var(--border-size) solid burlywood;
   border-top-right-radius: 50px;
@@ -31,19 +32,12 @@ body {
   border-bottom: var(--border-size) solid burlywood;
 }
 
-.floor[data-num='3'] {
-  order: 1;
-  background-color: snow;
-}
-
-.floor[data-num='2'] {
-  order: 2;
-  background-color: floralwhite;
-}
-
-.floor[data-num='1'] {
-  order: 3;
+.floor:nth-child(odd) {
   background-color: oldlace;
+}
+
+.floor:nth-child(even) {
+  background-color: floralwhite;
 }
 
 .floor-num {
@@ -79,26 +73,23 @@ body {
 }
 
 .elevator-cabin {
+  --floor-num: 1;
   --radius: 8px;
 
+  position: absolute;
+  bottom: 0;
   display: flex;
+  width: 100%;
   height: var(--floor-height);
   box-sizing: border-box;
   background-color: white;
   border: var(--border-size) solid dimgray;
   border-radius: var(--radius);
-  transition: all 1000ms ease-out;
   pointer-events: all;
-}
-
-.elevator-cabin[data-floor='1'] {
+  transition: transform 500ms ease-out;
   transform: translateY(
-    calc((2 * var(--floor-height)) + (2 * var(--border-size)))
+    calc((1 - var(--floor-num)) * (var(--floor-height) + var(--border-size)))
   );
-}
-
-.elevator-cabin[data-floor='2'] {
-  transform: translateY(calc(var(--floor-height) + var(--border-size)));
 }
 
 .floor-btn {
@@ -119,4 +110,8 @@ body {
 .floor-btn:active,
 .floor-btn.active {
   border-style: inset;
+}
+
+form {
+  margin: 20px;
 }

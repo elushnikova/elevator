@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elevator</title>
     <link rel="stylesheet" href="visual.css" />
+    <script src="rebuild.js" defer></script>
     <script src="elevator.js" defer></script>
   </head>
   <body>
+    <form action="#" name="rebuild">
+      <label for="floorsInput">Number of floors</label>
+      <input
+        type="number"
+        id="floorsInput"
+        name="floors"
+        min="2"
+        value="3"
+        max="10"
+      />
+      <button type="submit">Rebuild!</button>
+    </form>
+
     <div class="building js-building">
       <div class="floor js-floor" data-num="1">
         <span class="floor-num">1</span>

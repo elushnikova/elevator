@@ -43,8 +43,11 @@ if (building) {
       return;
     }
 
-    const duration = 1000; // ms
+    const msPerFloor = 500; // ms
+    const floorsToTravel = Math.abs(elevator.dataset.floor - floor.dataset.num);
+    const duration = msPerFloor * floorsToTravel;
     elevator.style.transitionDuration = `${duration}ms`;
+    elevator.style.setProperty('--floor-num', floor.dataset.num);
     elevator.dataset.moving = true;
     elevator.dataset.floor = Number(floor.dataset.num);
     setTimeout(() => {
