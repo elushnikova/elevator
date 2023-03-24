@@ -1,7 +1,7 @@
 {
   "name": "elevator",
   "version": "1.1.1",
-  "description": "Basic elevator that travels across three-storey building",
+  "description": "Basic elevator that travels across N-floor building",
   "author": "Lena Lushnikova",
   "license": "ISC",
   "devDependencies": {
