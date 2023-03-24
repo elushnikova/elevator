@@ -24,6 +24,7 @@ body {
   height: var(--floor-height);
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .floor:not(:first-child) {
@@ -110,8 +111,10 @@ body {
   border-style: outset;
   border-color: burlywood;
   background-color: whitesmoke;
+  cursor: pointer;
 }
 
-.floor-btn:active {
+.floor-btn:active,
+.floor-btn.active {
   border-style: inset;
 }

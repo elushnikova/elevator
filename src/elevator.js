@@ -1,10 +1,21 @@
 const building = document.querySelector('.js-building');
 
+function isFloor(element) {
+  return element.classList.contains('js-floor');
+}
+
+function activateBtn(floor) {
+  floor.querySelector('.js-floor-btn')?.classList.add('active');
+}
+
+function deactivateBtn(floor) {
+  floor.querySelector('.js-floor-btn')?.classList.remove('active');
+}
+
 if (building) {
   building.addEventListener('click', (event) => {
     const isFloorBtn = event.target.classList.contains('js-floor-btn');
-    const isFloor = event.target.classList.contains('js-floor');
-    if (!isFloorBtn && !isFloor) {
+    if (!isFloorBtn && !isFloor(event.target)) {
       return;
     }
 
@@ -39,5 +50,25 @@ if (building) {
     setTimeout(() => {
       elevator.dataset.moving = false;
     }, duration);
+  });
+
+  building.addEventListener('mousedown', (event) => {
+    if (!isFloor(event.target)) return;
+    activateBtn(event.target);
+  });
+
+  building.addEventListener('mouseup', (event) => {
+    if (!isFloor(event.target)) return;
+    deactivateBtn(event.target);
+  });
+
+  building.addEventListener('touchstart', (event) => {
+    if (!isFloor(event.target)) return;
+    activateBtn(event.target);
+  });
+
+  building.addEventListener('touchend', (event) => {
+    if (!isFloor(event.target)) return;
+    deactivateBtn(event.target);
   });
 }
