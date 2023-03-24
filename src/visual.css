@@ -28,6 +28,10 @@ body {
   cursor: pointer;
 }
 
+.floor.current {
+  cursor: not-allowed;
+}
+
 .floor:not(:first-child) {
   border-bottom: var(--border-size) solid burlywood;
 }
@@ -48,6 +52,10 @@ body {
   color: rosybrown;
   user-select: none;
   pointer-events: none;
+}
+
+.floor.current .floor-num::after {
+  content: '*';
 }
 
 @media screen and (min-width: 480px) {
