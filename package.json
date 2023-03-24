@@ -1,6 +1,6 @@
 {
   "name": "elevator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Basic elevator that travels across three-storey building",
   "author": "Lena Lushnikova",
   "license": "ISC",

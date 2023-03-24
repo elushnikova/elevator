@@ -75,6 +75,7 @@ body {
   width: 100px;
   height: 100%;
   border: var(--border-size) dashed burlywood;
+  pointer-events: none;
 }
 
 .elevator-cabin {
@@ -87,6 +88,7 @@ body {
   border: var(--border-size) solid dimgray;
   border-radius: var(--radius);
   transition: all 1000ms ease-out;
+  pointer-events: all;
 }
 
 .elevator-cabin[data-floor='1'] {
