@@ -10,39 +10,41 @@
     <script src="elevator.js" defer></script>
   </head>
   <body>
-    <form action="#" name="rebuild">
-      <label for="floorsInput">Number of floors</label>
-      <input
-        type="number"
-        id="floorsInput"
-        name="floors"
-        min="2"
-        value="3"
-        max="10"
-      />
-      <button type="submit">Rebuild!</button>
-    </form>
+    <main>
+      <form action="#" name="rebuild">
+        <label for="floorsInput">Number of floors</label>
+        <input
+          type="number"
+          id="floorsInput"
+          name="floors"
+          min="2"
+          value="3"
+          max="10"
+        />
+        <button type="submit">Rebuild!</button>
+      </form>
 
-    <div class="building js-building">
-      <div class="floor js-floor current" data-num="1">
-        <span class="floor-num">1</span>
-        <button class="floor-btn js-floor-btn" type="button"></button>
+      <div class="building js-building">
+        <div class="floor js-floor current" data-num="1">
+          <span class="floor-num">1</span>
+          <button class="floor-btn js-floor-btn" type="button"></button>
+        </div>
+        <div class="floor js-floor" data-num="2">
+          <span class="floor-num">2</span>
+          <button class="floor-btn js-floor-btn" type="button"></button>
+        </div>
+        <div class="floor js-floor" data-num="3">
+          <span class="floor-num">3</span>
+          <button class="floor-btn js-floor-btn" type="button"></button>
+        </div>
+        <div class="elevator-shaft">
+          <div
+            class="elevator-cabin js-elevator"
+            data-floor="1"
+            data-moving="false"
+          ></div>
+        </div>
       </div>
-      <div class="floor js-floor" data-num="2">
-        <span class="floor-num">2</span>
-        <button class="floor-btn js-floor-btn" type="button"></button>
-      </div>
-      <div class="floor js-floor" data-num="3">
-        <span class="floor-num">3</span>
-        <button class="floor-btn js-floor-btn" type="button"></button>
-      </div>
-      <div class="elevator-shaft">
-        <div
-          class="elevator-cabin js-elevator"
-          data-floor="1"
-          data-moving="false"
-        ></div>
-      </div>
-    </div>
+    </main>
   </body>
 </html>

@@ -4,6 +4,16 @@
 }
 
 body {
+  margin: 0;
+}
+
+main {
+  --panel-height: 80px;
+  --ptop: calc(20px + var(--panel-height));
+
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: var(--ptop) 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,9 +22,12 @@ body {
 
 .building {
   position: relative;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column-reverse;
-  width: 600px;
+  min-width: 300px;
+  width: 100%;
+  max-width: 640px;
   border: var(--border-size) solid burlywood;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
@@ -54,7 +67,7 @@ body {
   pointer-events: none;
 }
 
-.floor.current .floor-num::after {
+.floor.current .floor-num::before {
   content: '*';
 }
 
@@ -62,6 +75,14 @@ body {
   .floor-num {
     margin-right: auto;
     margin-left: 20px;
+  }
+
+  .floor.current .floor-num::before {
+    content: '';
+  }
+
+  .floor.current .floor-num::after {
+    content: '*';
   }
 }
 
@@ -121,5 +142,21 @@ body {
 }
 
 form {
-  margin: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  box-sizing: border-box;
+  height: var(--panel-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  box-shadow: 0 0 0 2px whitesmoke;
+}
+
+input[type='number'] {
+  width: 3em;
 }
