@@ -1,0 +1,117 @@
+:root {
+  --floor-height: 170px;
+  --border-size: 4px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.building {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--floor-height), 3);
+  width: 600px;
+  border: var(--border-size) solid burlywood;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  overflow: hidden;
+}
+
+.floor {
+  height: var(--floor-height);
+  display: flex;
+  align-items: center;
+}
+
+.floor:not(:first-child) {
+  border-bottom: var(--border-size) solid burlywood;
+}
+
+.floor[data-num='3'] {
+  order: 1;
+  background-color: snow;
+}
+
+.floor[data-num='2'] {
+  order: 2;
+  background-color: floralwhite;
+}
+
+.floor[data-num='1'] {
+  order: 3;
+  background-color: oldlace;
+}
+
+.floor-num {
+  margin-left: auto;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 48px;
+  color: rosybrown;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 480px) {
+  .floor-num {
+    margin-right: auto;
+    margin-left: 20px;
+  }
+}
+
+.elevator-shaft {
+  position: absolute;
+  box-sizing: content-box;
+  top: calc(-1 * var(--border-size));
+  right: 150px;
+  z-index: 10;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
+  width: 100px;
+  height: 100%;
+  border: var(--border-size) dashed burlywood;
+}
+
+.elevator-cabin {
+  --radius: 8px;
+
+  display: flex;
+  height: var(--floor-height);
+  box-sizing: border-box;
+  background-color: white;
+  border: var(--border-size) solid dimgray;
+  border-radius: var(--radius);
+  transition: all 1000ms ease-out;
+}
+
+.elevator-cabin[data-floor='1'] {
+  transform: translateY(
+    calc((2 * var(--floor-height)) + (2 * var(--border-size)))
+  );
+}
+
+.elevator-cabin[data-floor='2'] {
+  transform: translateY(calc(var(--floor-height) + var(--border-size)));
+}
+
+.floor-btn {
+  --size: 10px;
+
+  position: relative;
+  right: 130px;
+  width: var(--size);
+  height: var(--size);
+  padding: 0;
+  border-radius: 50%;
+  border-style: outset;
+  border-color: burlywood;
+  background-color: whitesmoke;
+}
+
+.floor-btn:active {
+  border-style: inset;
+}
