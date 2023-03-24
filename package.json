@@ -1,0 +1,14 @@
+{
+  "name": "elevator",
+  "version": "1.0.0",
+  "description": "Basic elevator that travels across three-storey building",
+  "author": "Lena Lushnikova",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "stylelint": "^15.3.0",
+    "stylelint-config-standard": "^31.0.0"
+  }
+}
