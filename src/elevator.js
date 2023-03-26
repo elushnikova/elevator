@@ -22,16 +22,17 @@ if (building) {
     const elevator = document.querySelector('.js-elevator');
     if (!elevator) {
       const message = `
-        Sorry for the inconvenience. 
-        The elevator cabin seems to be missing
-        (yes, that sounds weird for me too).
+        Простите за неудобство.
+        Похоже, в шахте нет кабины лифта
+        (для меня это тоже странно звучит).
 
-        Please, use stairs, if possible.
-        Otherwise, try reloading the page 
-        and calling elevator again.
+        Если возможно, воспользуйтесь 
+        лестницей, пожалуйста. Также можно 
+        обновить страницу и попробовать 
+        вызвать лифт ещё раз.
 
-        You can contact maintenance team
-        at elevator@elushnikova.dev
+        Связаться с обслуживающей компанией: 
+        elevator@elushnikova.dev
       `;
       throw new ReferenceError(message);
     }
